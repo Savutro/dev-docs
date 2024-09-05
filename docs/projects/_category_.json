@@ -1,0 +1,8 @@
+{
+  "label": "projects",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "A cli tool to track your working hours effectively."
+  }
+}
