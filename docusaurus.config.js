@@ -63,7 +63,6 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
         title: 'docs.savutro.dev',
@@ -72,6 +71,12 @@ const config = {
           src: 'img/turtle.png',
         },
         items: [
+          {
+            type: 'doc',
+            position: 'left',
+            docId: 'intro',
+            label: 'Intro',
+          },
           {
             type: 'docSidebar',
             sidebarId: 'projectsSidebar',
@@ -85,10 +90,16 @@ const config = {
             label: 'Learnings',
           },
           {
-            href: 'https://github.com/savutro/',
-            label: 'GitHub',
+            href: 'https://github.com/savutro',
             position: 'right',
+            className: 'navbar-item-github', 
+            'aria-label': 'GitHub Repository', 
+            html: '<i class="fab fa-github fa-lg"></i>'
           },
+          // {
+          //   type: 'search',
+          //   position: 'right',
+          // },
         ],
       },
       footer: {
@@ -144,6 +155,11 @@ const config = {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
+      // algolia: {
+      //   appId: 'YOUR_APP_ID',
+      //   apiKey: 'YOUR_SEARCH_API_KEY',
+      //   indexName: 'YOUR_INDEX_NAME',
+      // },
     }),
 };
 
