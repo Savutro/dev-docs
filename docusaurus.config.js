@@ -34,18 +34,9 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
+          //routeBasePath: '/',
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -53,10 +44,21 @@ const config = {
     ],
   ],
 
+  plugins: ["@orama/plugin-docusaurus-v3"],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      docs: {
+        sidebar: {
+          hideable: true,
+          autoCollapseCategories: true,
+        },
+      },
       image: 'img/docusaurus-social-card.jpg',
+      colorMode: {
+        respectPrefersColorScheme: true,
+      },
       navbar: {
         title: 'docs.savutro.dev',
         logo: {
@@ -87,12 +89,12 @@ const config = {
             position: 'right',
             className: 'navbar-item-github', 
             'aria-label': 'GitHub Repository', 
-            html: '<i class="fab fa-github fa-lg"></i>'
+            html: '<i class="fab fa-github fa-xl"></i>'
           },
-          // {
-          //   type: 'search',
-          //   position: 'right',
-          // },
+          {
+            type: 'search',
+            position: 'right',
+          },
         ],
       },
       footer: {
@@ -148,11 +150,6 @@ const config = {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
-      // algolia: {
-      //   appId: 'YOUR_APP_ID',
-      //   apiKey: 'YOUR_SEARCH_API_KEY',
-      //   indexName: 'YOUR_INDEX_NAME',
-      // },
     }),
 };
 
