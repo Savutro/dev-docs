@@ -24,7 +24,6 @@ function HomepageHeader() {
           </Link>
         </div>
       </div>
-      
     </header>
   );
 }
@@ -34,7 +33,7 @@ export default function Home() {
   return (
     <Layout
       title="docs.savutro.dev"
-      description="Description will go into a meta tag in <head />">
+      description="Public project documentation.">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

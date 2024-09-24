@@ -20,6 +20,11 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      # Expose the GitHub Token for Netlify CMS using the secret
+      - name: Set Netlify CMS GitHub Token
+        run: echo "NETLIFY_TOKEN=${{ secrets.NETLIFY_TOKEN }}" > .env
+
       - name: Build website
         run: npm run build
 

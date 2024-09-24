@@ -1,0 +1,18 @@
+backend:
+  name: github
+  repo: savutro/dev-docs
+  branch: main
+  base_url: "https://docs.savutro.dev"
+  auth_type: "token"
+  token: "${NETLIFY_TOKEN}"
+
+search: false
+media_folder: "static/img" 
+publish_mode: editorial_workflow
+
+collections:
+  - name: "zolaBlog"
+    label: "zolaBlog"
+    folder: "/projects/zolaBlog"
+    create: true
+    
