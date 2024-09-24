@@ -4,15 +4,27 @@ backend:
   branch: main
   base_url: "https://docs.savutro.dev"
   auth_type: "token"
-  token: "${NETLIFY_TOKEN}"
+  token: ""
 
-search: false
+search: true
 media_folder: "static/img" 
 publish_mode: editorial_workflow
 
+define: 
+  body: &body
+    label: "Content"
+    name: "body"
+    widget: "markdown"
+    required: false
+
 collections:
   - name: "zolaBlog"
-    label: "zolaBlog"
-    folder: "/projects/zolaBlog"
+    label: "Zola Blog"
+    folder: "projects/zolaBlog"
+    summary: "{{filename}} - {{fields.title}}"
     create: true
-    
+    delete: true
+    editor:
+      preview: false
+    fields:
+      - *body
